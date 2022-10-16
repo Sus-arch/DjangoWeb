@@ -24,6 +24,7 @@
   ```
   pip install -r requirements.txt
   ```
+  
   * Запускаем сайт 
   
   ```
@@ -41,6 +42,7 @@
   ```
   pip3 install -r requirements.txt
   ```
+  
   * Запускаем сайт 
   
   ```
