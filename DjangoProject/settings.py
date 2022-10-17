@@ -1,13 +1,20 @@
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+dotenv_path = Path('.')/'.env'
+if os.path.exists(dotenv_path):
+    load_dotenv('.env')
+else:
+    load_dotenv('.env.example')
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'NOT_SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = True
+DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
