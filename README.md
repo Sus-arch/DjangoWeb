@@ -42,11 +42,15 @@
   ```
   pip3 install -r requirements.txt
   ```
-  
   * Запускаем сайт 
   
   ```
   python3 manage.py runserver 8080
   ```
-  
+
+* Редактирование переменный среды
+
+    - Открыть файл .env.example
+    - Изменить значение SECRET_KEY на свой ключ
+
 * Переходим по ссылке http://localhost:8080/
