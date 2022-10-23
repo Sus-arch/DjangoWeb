@@ -21,3 +21,7 @@ class StaticURLTests(TestCase):
     def test_catalog_page_not_number(self):
         response = Client().get('/catalog/ema')
         self.assertEqual(response.status_code, 404)
+
+    def test_catalog_page_zero(self):
+        response = Client().get('/catalog/0')
+        self.assertEqual(response.status_code, 404)
