@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-dotenv_path = Path('.')/'.env'
+dotenv_path = Path('.') / ".env"
 if os.path.exists(dotenv_path):
     load_dotenv('.env')
 else:
