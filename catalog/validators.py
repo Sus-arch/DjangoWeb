@@ -19,3 +19,4 @@ def validate_weight(value):
     if value <= 0 or value >= 32767:
         return ValidationError("Вес не находиться в диапазоне (0;32767)")
     return value
+
