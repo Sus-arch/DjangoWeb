@@ -22,9 +22,3 @@ class Item(models.Model):
     text = models.TextField(validators=[validate_amazing])
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tag)
-
-    # class Meta:
-
-
-
-
