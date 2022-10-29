@@ -7,7 +7,8 @@ class Category(models.Model):
     name = models.CharField(max_length=150)
     is_published = models.BooleanField(default=True)
     slug = models.SlugField(unique=True, max_length=200)
-    weight = models.PositiveIntegerField(default=100, validators=[validate_weight])
+    weight = models.PositiveIntegerField(default=100,
+                                         validators=[validate_weight])
 
 
 class Tag(models.Model):
