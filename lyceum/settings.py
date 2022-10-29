@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'about.apps.AboutConfig',
     'catalog.apps.CatalogConfig',
     'homepage.apps.HomepageConfig',
+    'core.apps.CoreConfig'
 ]
 
 MIDDLEWARE = [
