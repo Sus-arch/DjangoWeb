@@ -10,4 +10,3 @@ class MainInfo(models.Model):
 
     class Meta:
         abstract = True
-
