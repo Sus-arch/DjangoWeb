@@ -25,8 +25,8 @@ class Tag(MainInfo):
 class Item(MainInfo):
     text = models.TextField('Описание', validators=[validate_amazing])
     category = models.ForeignKey(Category, on_delete=models.CASCADE,
-                                 related_name='category', name='Категория')
-    tags = models.ManyToManyField(Tag, related_name='tags', name='Теги')
+                                 related_name='category', verbose_name='Категория')
+    tags = models.ManyToManyField(Tag, related_name='tags', verbose_name='Теги')
 
     class Meta:
         verbose_name = 'Товар'
