@@ -77,6 +77,21 @@ class ItemModelTest(TestCase):
 
         self.assertEqual(Item.objects.count(), item_count + 1)
 
+    def test_able_create_item_with_punctuation_mark(self):
+        item_count = Item.objects.count()
+
+        self.item = Item(
+            is_published=True,
+            name='Test item',
+            category=self.category,
+            text='превосходно!'
+        )
+        self.item.full_clean()
+        self.item.save()
+        self.item.tags.add(self.tag)
+
+        self.assertEqual(Item.objects.count(), item_count + 1)
+
 
 class CategoryModelTest(TestCase):
     def test_unable_create_category_weight_negative_number(self):

@@ -1,9 +1,10 @@
+import re
 from django.core.exceptions import ValidationError
 
 
 def validate_amazing(value):
     must_be_in_item = {'превосходно', 'роскошно'}
-    check_value = set(value.lower().split())
+    check_value = set(re.sub(r'[^\w\s]', '', value.lower()).split())
 
     difference = must_be_in_item - check_value
 
