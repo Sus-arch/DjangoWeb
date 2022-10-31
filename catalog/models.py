@@ -5,31 +5,31 @@ from core.models import MainInfo
 
 
 class Category(MainInfo, models.Model):
-    slug = models.SlugField('Слаг', unique=True, max_length=200)
-    weight = models.PositiveIntegerField('Вес', default=100,
+    slug = models.SlugField('слаг', unique=True, max_length=200)
+    weight = models.PositiveIntegerField('вес', default=100,
                                          validators=[validate_weight])
 
     class Meta:
-        verbose_name = 'Категория'
-        verbose_name_plural = 'Категории'
+        verbose_name = 'категория'
+        verbose_name_plural = 'категории'
 
 
 class Tag(MainInfo):
-    slug = models.SlugField('Слаг', unique=True, max_length=200)
+    slug = models.SlugField('слаг', unique=True, max_length=200)
 
     class Meta:
-        verbose_name = 'Тег'
-        verbose_name_plural = 'Теги'
+        verbose_name = 'тег'
+        verbose_name_plural = 'теги'
 
 
 class Item(MainInfo):
-    text = models.TextField('Описание', validators=[validate_amazing])
+    text = models.TextField('описание', validators=[validate_amazing])
     category = models.ForeignKey(Category, on_delete=models.CASCADE,
                                  related_name='category',
-                                 verbose_name='Категория')
+                                 verbose_name='категория')
     tags = models.ManyToManyField(Tag, related_name='tags',
-                                  verbose_name='Теги')
+                                  verbose_name='теги')
 
     class Meta:
-        verbose_name = 'Товар'
-        verbose_name_plural = 'Товары'
+        verbose_name = 'товар'
+        verbose_name_plural = 'товары'
