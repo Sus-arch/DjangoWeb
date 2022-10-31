@@ -46,6 +46,9 @@ class ItemModelTest(TestCase):
             slug='test-tag-slug'
         )
 
+    def tearDown(self) -> None:
+        Item.objects.all().delete()
+
     def test_unable_create_item(self):
         item_count = Item.objects.count()
 
@@ -94,6 +97,9 @@ class ItemModelTest(TestCase):
 
 
 class CategoryModelTest(TestCase):
+    def tearDown(self) -> None:
+        Category.objects.all().delete()
+
     def test_unable_create_category_weight_negative_number(self):
         category_count = Category.objects.count()
 
@@ -155,6 +161,9 @@ class CategoryModelTest(TestCase):
 
 
 class TagModelTest(TestCase):
+    def tearDown(self) -> None:
+        Tag.objects.all().delete()
+
     def test_able_create_tag(self):
         tag_count = Tag.objects.count()
 
