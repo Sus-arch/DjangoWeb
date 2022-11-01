@@ -95,6 +95,21 @@ class ItemModelTest(TestCase):
 
         self.assertEqual(Item.objects.count(), item_count + 1)
 
+    def test_able_create_item_with_forgot_space(self):
+        item_count = Item.objects.count()
+
+        self.item = Item(
+            is_published=True,
+            name='Test item',
+            category=self.category,
+            text='Это очень превосходно!Просто потрясающе'
+        )
+        self.item.full_clean()
+        self.item.save()
+        self.item.tags.add(self.tag)
+
+        self.assertEqual(Item.objects.count(), item_count + 1)
+
 
 class CategoryModelTest(TestCase):
     def tearDown(self) -> None:
