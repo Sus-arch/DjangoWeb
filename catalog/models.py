@@ -1,6 +1,6 @@
 from django.db import models
 
-from .validators import validate_amazing, validate_weight
+from .validators import validate_weight, validate_must_be_param
 from core.models import MainInfo
 
 
@@ -23,7 +23,10 @@ class Tag(MainInfo):
 
 
 class Item(MainInfo):
-    text = models.TextField('описание', validators=[validate_amazing])
+    text = models.TextField('описание',
+                            validators=[
+                                validate_must_be_param('роскошно', 'превосходно')
+                            ])
     category = models.ForeignKey(Category, on_delete=models.CASCADE,
                                  related_name='category',
                                  verbose_name='категория')
