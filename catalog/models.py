@@ -30,7 +30,8 @@ class Tag(MainInfo):
 
     def clean(self):
         can_name = re.sub(r'[^\s\w]', '', self.name.lower())
-        if Tag.objects.filter(canonical_name=can_name).count() != 0:
+        if Tag.objects.filter(canonical_name=can_name).count() != 0 and \
+                Tag.objects.filter(canonical_name=can_name).first().id != self.id:
             raise ValidationError('Данный тег уже есть')
 
     class Meta:
