@@ -12,5 +12,11 @@ class ItemAdmin(admin.ModelAdmin):
     filter_horizontal = ('tags', )
 
 
-admin.site.register(Category)
-admin.site.register(Tag)
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    exclude = ('canonical_name',)
+
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    exclude = ('canonical_name', )
