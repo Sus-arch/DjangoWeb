@@ -60,3 +60,5 @@
   ```
 
 * Переходим по ссылке http://localhost:8080/
+# База данных
+* [ER-диаграмма БД](https://app.quickdatabasediagrams.com/#/d/aXJwXG) 
