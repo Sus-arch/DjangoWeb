@@ -47,6 +47,7 @@ class ItemModelTest(TestCase):
         )
 
     def tearDown(self) -> None:
+        super().tearDown()
         Item.objects.all().delete()
 
     def test_unable_create_item(self):
@@ -113,6 +114,7 @@ class ItemModelTest(TestCase):
 
 class CategoryModelTest(TestCase):
     def tearDown(self) -> None:
+        super().tearDown()
         Category.objects.all().delete()
 
     def test_unable_create_category_weight_negative_number(self):
@@ -177,6 +179,7 @@ class CategoryModelTest(TestCase):
 
 class TagModelTest(TestCase):
     def tearDown(self) -> None:
+        super().tearDown()
         Tag.objects.all().delete()
 
     def test_able_create_tag(self):
