@@ -24,9 +24,7 @@ class Tag(MainInfo):
 
 class Item(MainInfo):
     text = models.TextField('описание',
-                            validators=[
-                                validate_must_be_param('роскошно', 'превосходно')
-                            ])
+                            validators=[validate_must_be_param('роскошно', 'превосходно')])
     category = models.ForeignKey(Category, on_delete=models.CASCADE,
                                  related_name='category',
                                  verbose_name='категория')
