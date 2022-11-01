@@ -17,7 +17,7 @@ class Category(MainInfo):
         can_name = re.sub(r'[^\s\w]', '', self.name.lower())
         if Category.objects.filter(canonical_name=can_name).count() != 0 and \
                 Category.objects.filter(canonical_name=can_name).first().id != self.id:
-            raise ValidationError(f'Данная категория уже есть')
+            raise ValidationError('Данная категория уже есть')
 
     class Meta:
         verbose_name = 'категория'
