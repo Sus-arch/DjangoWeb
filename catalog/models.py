@@ -31,7 +31,7 @@ class Tag(MainInfo):
     def clean(self):
         can_name = re.sub(r'[^\s\w]', '', self.name.lower())
         if Tag.objects.filter(canonical_name=can_name).count() != 0:
-            raise ValidationError(f'Данный тег уже есть')
+            raise ValidationError('Данный тег уже есть')
 
     class Meta:
         verbose_name = 'тег'
