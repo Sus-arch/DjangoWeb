@@ -14,8 +14,8 @@ class Category(MainInfo):
 
     def clean(self):
         self.canonical_name = re.sub(r'[^\s\w]', '', self.name.lower())
-        if (Category.objects.filter(canonical_name=self.canonical_name).count() != 0 and
-                Category.objects.filter(canonical_name=self.canonical_name).first().id != self.id):
+        if (Category.objects.filter(canonical_name=self.canonical_name).count() != 0
+                and Category.objects.filter(canonical_name=self.canonical_name).first().id != self.id):
             raise ValidationError('Данная категория уже есть')
         super().clean()
 
@@ -30,8 +30,8 @@ class Tag(MainInfo):
 
     def clean(self):
         self.canonical_name = re.sub(r'[^\s\w]', '', self.name.lower())
-        if (Tag.objects.filter(canonical_name=self.canonical_name).count() != 0 and
-                Tag.objects.filter(canonical_name=self.canonical_name).first().id != self.id):
+        if (Tag.objects.filter(canonical_name=self.canonical_name).count() != 0
+                and Tag.objects.filter(canonical_name=self.canonical_name).first().id != self.id):
             raise ValidationError('Данный тег уже есть')
         super().clean()
 
