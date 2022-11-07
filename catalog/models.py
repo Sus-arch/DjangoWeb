@@ -52,3 +52,13 @@ class Item(MainInfo):
     class Meta:
         verbose_name = 'товар'
         verbose_name_plural = 'товары'
+
+#
+# class ItemPhoto(models.Model):
+#     image = models.ImageField('фото')
+#     item = models.ForeignKey(Item, on_delete=models.CASCADE)
+#
+#     def __str__(self):
+#         return self.image.url
+#
+#
