@@ -47,8 +47,8 @@ class ItemModelTest(TestCase):
         )
 
     def tearDown(self) -> None:
-        super().tearDown()
         Item.objects.all().delete()
+        super().tearDown()
 
     def test_unable_create_item(self):
         item_count = Item.objects.count()
@@ -126,8 +126,8 @@ class CategoryModelTest(TestCase):
         cls.category.save()
 
     def tearDown(self) -> None:
-        super().tearDown()
         Category.objects.all().delete()
+        super().tearDown()
 
     def test_unable_create_category_already_exists(self):
         category_count = Category.objects.count()
@@ -217,8 +217,8 @@ class TagModelTest(TestCase):
         cls.tag.save()
 
     def tearDown(self) -> None:
-        super().tearDown()
         Tag.objects.all().delete()
+        super().tearDown()
 
     def test_unable_create_tag_already_exists(self):
         tag_count = Tag.objects.count()
