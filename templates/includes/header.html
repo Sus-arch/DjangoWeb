@@ -7,14 +7,36 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'homepage:home' %}">Главная</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'catalog:item_list' %}">Каталог</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'about:description' %}">О нас</a>
+              {% with request.resolver_match.view_name as view_name %}
+                  {% if view_name == 'homepage:home' %}
+                    <li class="nav-item">
+                      <a class="nav-link-active" aria-current="page" href="{% url 'homepage:home' %}">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'catalog:item_list' %}">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'about:description' %}">О нас</a>
+                  {% elif view_name == 'about:description' %}
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="{% url 'homepage:home' %}">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'catalog:item_list' %}">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link-activate" href="{% url 'about:description' %}">О нас</a>
+                  {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="{% url 'homepage:home' %}">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link-active" href="{% url 'catalog:item_list' %}">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'about:description' %}">О нас</a>
+                  {% endif %}
+              {% endwith %}
           </ul>
         </div>
       </div>
