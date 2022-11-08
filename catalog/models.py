@@ -4,6 +4,8 @@ from django.db import models
 from .validators import validate_weight, validate_amazing
 from core.models import MainInfo
 from django.core.exceptions import ValidationError
+from django.utils.safestring import mark_safe
+from sorl.thumbnail import get_thumbnail
 
 
 class Category(MainInfo):
@@ -48,17 +50,50 @@ class Item(MainInfo):
                                  verbose_name='категория')
     tags = models.ManyToManyField(Tag, related_name='tags',
                                   verbose_name='теги')
+    image = models.ImageField('фото', blank=True, null=True, upload_to='uploads/%Y/%m')
+
+    @property
+    def get_img(self):
+        return get_thumbnail(self.image, '300x300', crop='center', quality=51)
+
+    def image_tmb(self):
+        if self.image:
+            return mark_safe(
+                f'<img src="{self.get_img.url}">'
+            )
+        return 'Нет изображения'
+
+    image_tmb.short_description = 'превью'
+    image_tmb.allow_tags = True
 
     class Meta:
         verbose_name = 'товар'
         verbose_name_plural = 'товары'
 
-#
-# class ItemPhoto(models.Model):
-#     image = models.ImageField('фото')
-#     item = models.ForeignKey(Item, on_delete=models.CASCADE)
-#
-#     def __str__(self):
-#         return self.image.url
-#
-#
+
+class Gallery(models.Model):
+    image = models.ImageField('фото', blank=True, null=True, upload_to='uploads/%Y/%m')
+    item = models.ForeignKey(Item, on_delete=models.CASCADE,
+                             related_name='item',
+                             verbose_name='товар')
+
+    def __str__(self):
+        return self.image.url
+
+    @property
+    def get_img(self):
+        return get_thumbnail(self.image, '300x300', crop='center', quality=51)
+
+    def image_tmb(self):
+        if self.image:
+            return mark_safe(
+                f'<img src="{self.get_img.url}">'
+            )
+        return 'Нет изображения'
+
+    image_tmb.short_description = 'превью'
+    image_tmb.allow_tags = True
+
+    class Meta:
+        verbose_name = 'галерея фото'
+        verbose_name_plural = 'галереи фото'
