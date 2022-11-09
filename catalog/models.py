@@ -76,7 +76,8 @@ class Item(MainInfo):
     tags = models.ManyToManyField(Tag, related_name='tags',
                                   verbose_name='теги')
     image = models.ImageField('фото', blank=True, null=True, upload_to='uploads/%Y/%m')
-    gallery_photo = models.ForeignKey(Gallery, on_delete=models.CASCADE,
+    gallery_photo = models.ForeignKey(Gallery, blank=True, null=True,
+                                      on_delete=models.CASCADE,
                                       related_name='gallery_photo',
                                       verbose_name='галерея')
 
