@@ -1,44 +1,13 @@
 <header>
     <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'homepage:home' %}">Красивый сайт</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+      <div class="container">
+          <nav class="nav nav-pills nav-justified">
               {% with request.resolver_match.view_name as view_name %}
-                  {% if view_name == 'homepage:home' %}
-                    <li class="nav-item">
-                      <a class="nav-link-active" aria-current="page" href="{% url 'homepage:home' %}">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{% url 'catalog:item_list' %}">Каталог</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{% url 'about:description' %}">О нас</a>
-                  {% elif view_name == 'about:description' %}
-                    <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="{% url 'homepage:home' %}">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{% url 'catalog:item_list' %}">Каталог</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link-activate" href="{% url 'about:description' %}">О нас</a>
-                  {% else %}
-                    <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="{% url 'homepage:home' %}">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link-active" href="{% url 'catalog:item_list' %}">Каталог</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{% url 'about:description' %}">О нас</a>
-                  {% endif %}
+                  <a class="{% if view_name == 'homepage:home' %}nav-item nav-link active {% else %} nav-item nav-link {% endif %}" href="{% url 'homepage:home' %}">Главная</a>
+                  <a class="{% if view_name == 'catalog:item_list' %}nav-item nav-link active {% else %} nav-item nav-link {% endif %}" href="{% url 'catalog:item_list' %}">Каталог</a>
+                  <a class="{% if view_name == 'about:description' %}nav-item nav-link active {% else %} nav-item nav-link {% endif %}" href="{% url 'about:description' %}">О нас</a>
               {% endwith %}
-          </ul>
-        </div>
+          </nav>
       </div>
     </nav>
 </header>

@@ -16,12 +16,14 @@
     </head>
     <body>
         {% include "includes/header.html" %}
-        <br>
-        <main>
-            {% block content %}{% endblock %}
-        </main>
-        <br>
-        {% include "includes/footer.html" %}
+        <div class="container">
+            <br>
+            <main>
+                {% block content %}{% endblock %}
+            </main>
+            <br>
+            {% include "includes/footer.html" %}
+        </div>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
   </body>
     </body>
