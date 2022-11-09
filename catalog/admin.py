@@ -24,4 +24,4 @@ class TagAdmin(admin.ModelAdmin):
 
 @admin.register(Gallery)
 class GalleryAdmin(admin.ModelAdmin):
-    list_display = ('item', 'image_tmb')
+    list_display = ('image_tmb', )

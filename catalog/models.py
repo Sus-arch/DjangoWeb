@@ -42,40 +42,8 @@ class Tag(MainInfo):
         verbose_name_plural = 'теги'
 
 
-class Item(MainInfo):
-    text = models.TextField('описание',
-                            validators=[validate_amazing])
-    category = models.ForeignKey(Category, on_delete=models.CASCADE,
-                                 related_name='category',
-                                 verbose_name='категория')
-    tags = models.ManyToManyField(Tag, related_name='tags',
-                                  verbose_name='теги')
-    image = models.ImageField('фото', blank=True, null=True, upload_to='uploads/%Y/%m')
-
-    @property
-    def get_img(self):
-        return get_thumbnail(self.image, '300x300', crop='center', quality=51)
-
-    def image_tmb(self):
-        if self.image:
-            return mark_safe(
-                f'<img src="{self.get_img.url}">'
-            )
-        return 'Нет изображения'
-
-    image_tmb.short_description = 'превью'
-    image_tmb.allow_tags = True
-
-    class Meta:
-        verbose_name = 'товар'
-        verbose_name_plural = 'товары'
-
-
 class Gallery(models.Model):
     image = models.ImageField('фото', blank=True, null=True, upload_to='uploads/%Y/%m')
-    item = models.ForeignKey(Item, on_delete=models.CASCADE,
-                             related_name='item',
-                             verbose_name='товар')
 
     def __str__(self):
         return self.image.url
@@ -97,3 +65,35 @@ class Gallery(models.Model):
     class Meta:
         verbose_name = 'галерея фото'
         verbose_name_plural = 'галереи фото'
+
+
+class Item(MainInfo):
+    text = models.TextField('описание',
+                            validators=[validate_amazing])
+    category = models.ForeignKey(Category, on_delete=models.CASCADE,
+                                 related_name='category',
+                                 verbose_name='категория')
+    tags = models.ManyToManyField(Tag, related_name='tags',
+                                  verbose_name='теги')
+    image = models.ImageField('фото', blank=True, null=True, upload_to='uploads/%Y/%m')
+    gallery_photo = models.ForeignKey(Gallery, on_delete=models.CASCADE,
+                                      related_name='gallery_photo',
+                                      verbose_name='галерея')
+
+    @property
+    def get_img(self):
+        return get_thumbnail(self.image, '300x300', crop='center', quality=51)
+
+    def image_tmb(self):
+        if self.image:
+            return mark_safe(
+                f'<img src="{self.get_img.url}">'
+            )
+        return 'Нет изображения'
+
+    image_tmb.short_description = 'превью'
+    image_tmb.allow_tags = True
+
+    class Meta:
+        verbose_name = 'товар'
+        verbose_name_plural = 'товары'
