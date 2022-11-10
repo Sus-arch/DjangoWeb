@@ -30,7 +30,8 @@ INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'core.apps.CoreConfig',
     'sorl.thumbnail',
-    'django_cleanup.apps.CleanupConfig'
+    'django_cleanup.apps.CleanupConfig',
+    'django_quill'
 ]
 
 MIDDLEWARE = [
