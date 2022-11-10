@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'sorl.thumbnail',
     'django_cleanup.apps.CleanupConfig',
-    'django_quill'
+    'tinymce'
 ]
 
 MIDDLEWARE = [

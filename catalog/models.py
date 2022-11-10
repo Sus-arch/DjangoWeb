@@ -5,7 +5,7 @@ from .validators import validate_weight, validate_amazing
 from core.models import MainInfo
 from django.core.exceptions import ValidationError
 from django.utils.safestring import mark_safe
-from django_quill.fields import QuillField
+from tinymce import models as tinymce_models
 from sorl.thumbnail import get_thumbnail
 
 
@@ -69,7 +69,7 @@ class Gallery(models.Model):
 
 
 class Item(MainInfo):
-    text = QuillField('описание', validators=[validate_amazing])
+    text = tinymce_models.HTMLField('описание', validators=[validate_amazing])
     category = models.ForeignKey(Category, on_delete=models.CASCADE,
                                  related_name='category',
                                  verbose_name='категория')
