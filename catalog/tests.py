@@ -9,10 +9,6 @@ class StaticURLTests(TestCase):
         response = Client().get('/catalog/')
         self.assertEqual(response.status_code, 200)
 
-    def test_catalog_page_number(self):
-        response = Client().get('/catalog/2')
-        self.assertEqual(response.status_code, 200)
-
     def test_catalog_page_negative_number(self):
         response = Client().get('/catalog/-3')
         self.assertEqual(response.status_code, 404)
@@ -27,6 +23,23 @@ class StaticURLTests(TestCase):
 
     def test_catalog_page_zero(self):
         response = Client().get('/catalog/0')
+        self.assertEqual(response.status_code, 404)
+
+
+class TaskPagesTests(TestCase):
+    fixtures = ['data.json']
+
+    def test_catalog_show_correct_context(self):
+        response = Client().get('/catalog/')
+        self.assertIn('items', response.context)
+        self.assertEqual(len(response.context['items']), 4)
+
+    def test_catalog_show_correct_item(self):
+        response = Client().get('/catalog/2')
+        self.assertEqual(response.status_code, 200)
+
+    def test_catalog_show_incorrect_item(self):
+        response = Client().get('/catalog/5000')
         self.assertEqual(response.status_code, 404)
 
 
