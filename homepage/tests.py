@@ -9,9 +9,9 @@ class StaticURLTests(TestCase):
 
 
 class TaskPagesTests(TestCase):
-    fixtures = ['catalog/fixtures/objeckts.json']
+    fixtures = ['data.json']
 
     def test_homepage_show_correct_context(self):
         response = Client().get(reverse('homepage:home'))
         self.assertIn('items', response.context)
-        self.assertEqual(len(response.context['items']), 5)
+        self.assertEqual(len(response.context['items']), 4)
