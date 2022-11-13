@@ -1,5 +1,5 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Элемент - {{ pk }}</h1>
+    {% include "includes/item_card.html" with full_text=1 %}
 {% endblock %}

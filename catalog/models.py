@@ -1,12 +1,14 @@
 import re
 
 from django.db import models
-from .validators import validate_weight, validate_amazing
+from django.db.models import Prefetch
 from core.models import MainInfo
 from django.core.exceptions import ValidationError
 from django.utils.safestring import mark_safe
 from tinymce import models as tinymce_models
 from sorl.thumbnail import get_thumbnail
+
+from .validators import validate_weight, validate_amazing
 
 
 class Category(MainInfo):
@@ -27,7 +29,18 @@ class Category(MainInfo):
         verbose_name_plural = 'категории'
 
 
+class TagManager(models.Manager):
+    def published(self):
+        return (
+            self.get_queryset()
+                .filter(is_published=True)
+                .order_by('name')
+        )
+
+
 class Tag(MainInfo):
+    objects = TagManager()
+
     slug = models.SlugField('слаг', unique=True, max_length=200)
     canonical_name = models.CharField('каноническое название', max_length=150, unique=True, editable=False)
 
@@ -68,7 +81,22 @@ class Gallery(models.Model):
         verbose_name_plural = 'галереи фото'
 
 
+class ItemManager(models.Manager):
+    def published(self):
+        return (
+            self.get_queryset()
+                .filter(is_published=True)
+                .select_related('category')
+                .prefetch_related(
+                    Prefetch('tags', queryset=Tag.objects.published()))
+                .only('name', 'text', 'category__name', 'tags__name', 'category_id')
+        )
+
+
 class Item(MainInfo):
+    objects = ItemManager()
+
+    is_on_main = models.BooleanField('на главной', default=False)
     text = tinymce_models.HTMLField('описание', validators=[validate_amazing])
     category = models.ForeignKey(Category, on_delete=models.CASCADE,
                                  related_name='category',

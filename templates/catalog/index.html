@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Список элементов</h1>
+    {% for item in items %}
+        {% include "includes/item_card.html" with full_text=0 %}
+    {% empty %}
+        <p>Ничего не найдено</p>
+    {% endfor %}
 {% endblock %}

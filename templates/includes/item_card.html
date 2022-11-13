@@ -1,0 +1,15 @@
+<div>
+    <h3>{{ item.name }}</h3>
+    {% if full_text == 1 %}
+        <p>Описание: {{ item.text | safe }}</p>
+    {% else %}
+        <p>Описание: {{ item.text | truncatewords_html:10 | safe }}</p>
+    {% endif %}
+    <p>Категория: {{ item.category.name }}</p>
+    <p>Теги:
+        {% for tag in item.tags.all %}
+            {{ tag.name }}
+        {% endfor %}
+    </p>
+</div>
+<hr>
