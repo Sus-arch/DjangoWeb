@@ -36,6 +36,7 @@ class TaskPagesTests(TestCase):
 
     def test_catalog_show_correct_item(self):
         response = Client().get('/catalog/2')
+        self.assertIn('item', response.context)
         self.assertEqual(response.status_code, 200)
 
     def test_catalog_show_incorrect_item(self):
