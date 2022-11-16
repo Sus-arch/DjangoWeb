@@ -3,6 +3,8 @@ from django.core.exceptions import ValidationError
 
 from .models import Item, Category, Tag
 
+from core.tests import check_content_value
+
 
 class StaticURLTests(TestCase):
     def test_catalog_page_endpoint(self):
@@ -34,10 +36,19 @@ class TaskPagesTests(TestCase):
         self.assertIn('items', response.context)
         self.assertEqual(len(response.context['items']), 4)
 
+    def test_catalog_show_correct_content(self):
+        response = Client().get('/catalog/')
+        for item in response.context['items']:
+            check_content_value(self, item)
+
     def test_catalog_show_correct_item(self):
         response = Client().get('/catalog/2')
         self.assertIn('item', response.context)
         self.assertEqual(response.status_code, 200)
+
+    def test_catalog_show_correct_item_content(self):
+        response = Client().get('/catalog/2')
+        check_content_value(self, response.context['item'])
 
     def test_catalog_show_incorrect_item(self):
         response = Client().get('/catalog/5000')
