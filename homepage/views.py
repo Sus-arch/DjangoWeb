@@ -1,13 +1,11 @@
 from django.shortcuts import render
 
-from catalog.models import Item
+from homepage.items_services import get_items
 
 
 def home(request):
     template_name = 'homepage/index.html'
-    item = (Item.objects.published()
-            .filter(is_on_main=True)
-            .order_by('name'))
+    item = get_items()
     context = {
         'items': item
     }

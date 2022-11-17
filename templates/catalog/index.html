@@ -2,6 +2,9 @@
 
 {% block content %}
     {% for item in items %}
+        {% ifchanged %}
+        <h1>Категория: {{ item.category.name }}</h1>
+        {% endifchanged %}
         {% include "includes/item_card.html" with full_text=0 %}
     {% empty %}
         <p>Ничего не найдено</p>
