@@ -9,7 +9,8 @@ urlpatterns = [
     path('catalog/', include('catalog.urls')),
     path('about/', include('about.urls')),
     path('admin/', admin.site.urls),
-    path('tinymce/', include('tinymce.urls'))
+    path('tinymce/', include('tinymce.urls')),
+    path('feedback/', include('feedback.urls')),
 ]
 
 if settings.DEBUG:

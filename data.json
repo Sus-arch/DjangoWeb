@@ -598,6 +598,110 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2022-11-17T22:20:33.987Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "Шалаш",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u044f\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2022-11-17T22:20:37.979Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "Война и мир",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2022-11-17T22:20:42.354Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Дом Ф.Д. Маштакова",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u044f\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2022-11-22T21:56:58.308Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Дом Ф.Д. МаштаковаFF",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2022-11-22T21:58:14.086Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Дом Ф.Д. МаштаковаFF",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2022-11-22T22:21:31.421Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "6",
+    "object_repr": "Дом Ф.Д",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2022-11-22T22:21:42.171Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "6",
+    "object_repr": "Дом Ф.Д",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2022-11-22T22:21:57.627Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "6",
+    "object_repr": "Дом Ф.Д",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -1030,6 +1134,42 @@
   }
 },
 {
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add feedback",
+    "content_type": 13,
+    "codename": "add_feedback"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change feedback",
+    "content_type": 13,
+    "codename": "change_feedback"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete feedback",
+    "content_type": 13,
+    "codename": "delete_feedback"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view feedback",
+    "content_type": 13,
+    "codename": "view_feedback"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
@@ -1144,6 +1284,14 @@
   }
 },
 {
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "feedback",
+    "model": "feedback"
+  }
+},
+{
   "model": "sessions.session",
   "pk": "hovpxmnea82o2xyyjrk5anpaunisehxq",
   "fields": {
@@ -1243,22 +1391,6 @@
 },
 {
   "model": "catalog.item",
-  "pk": 2,
-  "fields": {
-    "name": "Дом Ф.Д. Маштакова",
-    "is_published": true,
-    "is_on_main": true,
-    "text": "<h1 style=\"text-align: center;\"><strong><em>превосходно</em>&nbsp;</strong></h1>",
-    "category": 1,
-    "image": "uploads/2022/11/665f2d9bdde3ef8870d71f6f44ca15e5.jpg",
-    "gallery_photo": null,
-    "tags": [
-      1
-    ]
-  }
-},
-{
-  "model": "catalog.item",
   "pk": 3,
   "fields": {
     "name": "Книга.",
@@ -1298,12 +1430,36 @@
     "is_published": true,
     "is_on_main": true,
     "text": "<p>Роскошно</p>",
-    "category": 3,
+    "category": 2,
     "image": "",
     "gallery_photo": null,
     "tags": [
       4
     ]
+  }
+},
+{
+  "model": "catalog.item",
+  "pk": 6,
+  "fields": {
+    "name": "Дом Ф.Д",
+    "is_published": true,
+    "is_on_main": true,
+    "text": "<p>превосходно</p>",
+    "category": 2,
+    "image": "uploads/2022/11/Кижма_Дома.JPG",
+    "gallery_photo": 1,
+    "tags": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||048a9e19c3531de97f273923c353b63c",
+  "fields": {
+    "value": "{\"name\": \"uploads/2022/11/\\u041a\\u0438\\u0436\\u043c\\u0430_\\u0414\\u043e\\u043c\\u0430.JPG\", \"storage\": \"django.core.files.storage.FileSystemStorage\", \"size\": [800, 600]}"
   }
 },
 {
@@ -1315,9 +1471,9 @@
 },
 {
   "model": "thumbnail.kvstore",
-  "pk": "sorl-thumbnail||image||6697afd8b14f9cfc066cc3c329e13a45",
+  "pk": "sorl-thumbnail||image||571d25af81744cc5358299a9ba238915",
   "fields": {
-    "value": "{\"name\": \"uploads/2022/11/665f2d9bdde3ef8870d71f6f44ca15e5.jpg\", \"storage\": \"django.core.files.storage.FileSystemStorage\", \"size\": [3840, 2226]}"
+    "value": "{\"name\": \"cache/fa/04/fa04f12684a2f8ceab5eb6a0a6a76e34.jpg\", \"storage\": \"django.core.files.storage.FileSystemStorage\", \"size\": [300, 300]}"
   }
 },
 {
@@ -1343,9 +1499,9 @@
 },
 {
   "model": "thumbnail.kvstore",
-  "pk": "sorl-thumbnail||image||ff4176b3df645ec26273a9e72e06791a",
+  "pk": "sorl-thumbnail||thumbnails||048a9e19c3531de97f273923c353b63c",
   "fields": {
-    "value": "{\"name\": \"cache/b9/d3/b9d3d6d4d74536efeaf33d09d50b6c9c.jpg\", \"storage\": \"django.core.files.storage.FileSystemStorage\", \"size\": [300, 300]}"
+    "value": "[\"571d25af81744cc5358299a9ba238915\"]"
   }
 },
 {
@@ -1353,13 +1509,6 @@
   "pk": "sorl-thumbnail||thumbnails||54509845829abdb59cecd5ef5f93261a",
   "fields": {
     "value": "[\"7f312f314a186fff371825af376649d2\"]"
-  }
-},
-{
-  "model": "thumbnail.kvstore",
-  "pk": "sorl-thumbnail||thumbnails||6697afd8b14f9cfc066cc3c329e13a45",
-  "fields": {
-    "value": "[\"ff4176b3df645ec26273a9e72e06791a\"]"
   }
 },
 {
