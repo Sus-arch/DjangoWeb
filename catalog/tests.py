@@ -42,12 +42,12 @@ class TaskPagesTests(TestCase):
             check_content_value(self, item)
 
     def test_catalog_show_correct_item(self):
-        response = Client().get('/catalog/2')
+        response = Client().get('/catalog/3')
         self.assertIn('item', response.context)
         self.assertEqual(response.status_code, 200)
 
     def test_catalog_show_correct_item_content(self):
-        response = Client().get('/catalog/2')
+        response = Client().get('/catalog/3')
         check_content_value(self, response.context['item'])
 
     def test_catalog_show_incorrect_item(self):
