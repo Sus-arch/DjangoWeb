@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.core.mail import send_mail
+from django.contrib import messages
 
 from feedback.forms import FeedbackForm
 
@@ -21,6 +22,7 @@ def feedback(request):
             [form.cleaned_data['mail']],
             fail_silently=True,
         )
+        messages.success(request, 'Фидбек оправлен. Спасибо!')
         return redirect(reverse('feedback:feedback'))
 
     return render(request, template, context)

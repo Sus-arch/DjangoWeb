@@ -11,10 +11,9 @@ class FeedbackForm(forms.ModelForm):
 
     class Meta:
         model = Feedback
-        fields = (
-            Feedback.name.field.name,
-            Feedback.text.field.name,
-            Feedback.mail.field.name,
+        exclude = (
+            Feedback.id.field.name,
+            Feedback.created_on.field.name,
         )
         labels = {
             Feedback.name.field.name: 'Имя',
