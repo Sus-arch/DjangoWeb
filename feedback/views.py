@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.contrib import messages
 
 from feedback.forms import FeedbackForm
+from feedback.models import Feedback
 
 
 def feedback(request):
@@ -22,6 +23,10 @@ def feedback(request):
             [form.cleaned_data['mail']],
             fail_silently=True,
         )
+        item = Feedback.objects.create(
+            **form.cleaned_data
+        )
+        item.save()
         messages.success(request, 'Фидбек оправлен. Спасибо!')
         return redirect(reverse('feedback:feedback'))
 
