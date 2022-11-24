@@ -2,6 +2,7 @@ from django.test import Client, TestCase
 from django.urls import reverse
 
 from feedback.forms import FeedbackForm
+from feedback.models import Feedback
 
 
 class FeedbackFormTests(TestCase):
@@ -38,7 +39,23 @@ class FeedbackFormTests(TestCase):
         mail_help_text = FeedbackFormTests.form.fields['mail'].help_text
         self.assertEqual(mail_help_text, 'Введите ваш адрес электронной почты')
 
+    def test_unable_create_feedback(self):
+        item_count = Feedback.objects.count()
+        form_data = {
+            'name': 'Тест',
+            'text': 'Тест',
+            'mail': 'notmail',
+        }
+
+        response = Client().post(
+            reverse('feedback:feedback'),
+            data=form_data,
+            follow=True
+        )
+        self.assertEqual(Feedback.objects.count(), item_count)
+
     def test_create_feedback(self):
+        item_count = Feedback.objects.count()
         form_data = {
             'name': 'Тест',
             'text': 'Тест',
@@ -52,3 +69,13 @@ class FeedbackFormTests(TestCase):
         )
 
         self.assertRedirects(response, reverse('feedback:feedback'))
+
+        self.assertEqual(Feedback.objects.count(), item_count + 1)
+
+        self.assertTrue(
+            Feedback.objects.filter(
+                name='Тест',
+                text='Тест',
+                mail='123@l.com',
+                ).exists()
+            )
