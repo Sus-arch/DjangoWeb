@@ -52,6 +52,7 @@ class FeedbackFormTests(TestCase):
             data=form_data,
             follow=True
         )
+        self.assertTrue(response.context['form'].has_error('mail'))
         self.assertEqual(Feedback.objects.count(), item_count)
 
     def test_create_feedback(self):
@@ -76,6 +77,4 @@ class FeedbackFormTests(TestCase):
             Feedback.objects.filter(
                 name='Тест',
                 text='Тест',
-                mail='123@l.com',
-                ).exists()
-            )
+                mail='123@l.com').exists())
