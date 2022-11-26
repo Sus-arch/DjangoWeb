@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'feedback.apps.FeedbackConfig',
     'core.apps.CoreConfig',
+    'users.apps.UsersConfig',
     'sorl.thumbnail',
     'django_cleanup.apps.CleanupConfig',
     'tinymce',
@@ -120,6 +121,9 @@ MEDIA_URL = '/media/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = BASE_DIR / 'sent_emails'
+
+LOGIN_URL = '/auth/login'
+LOGIN_REDIRECT_URL = '/'
 
 
 def sorl_delete(**kwargs):
