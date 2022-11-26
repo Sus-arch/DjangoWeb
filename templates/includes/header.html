@@ -7,8 +7,23 @@
                   <a class="{% if view_name == 'catalog:item_list' %}nav-item nav-link active {% else %} nav-item nav-link {% endif %}" href="{% url 'catalog:item_list' %}">Каталог</a>
                   <a class="{% if view_name == 'about:description' %}nav-item nav-link active {% else %} nav-item nav-link {% endif %}" href="{% url 'about:description' %}">О нас</a>
                   <a class="{% if view_name == 'feedback:feedback' %}nav-item nav-link active {% else %} nav-item nav-link {% endif %}" href="{% url 'feedback:feedback' %}">Фидбек</a>
-              {% endwith %}
           </nav>
+          <nav class="nav nav-pills nav-justified">
+              {% if user.is_authenticated %}
+                  <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{{ user.username }}</button>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Мой профиль</a></li>
+                          <li><a class="dropdown-item" href="{% url 'users:password_change' %}">Сменить пароль</a></li>
+                          <li><a class="dropdown-item" href="{% url 'users:logout' %}">Выйти</a></li>
+                      </ul>
+                  </div>
+              {% else %}
+                  <a class="{% if view_name == 'users:login' %}nav-item nav-link active {% else %} nav-item nav-link {% endif %}" href="{% url 'users:login' %}">Вход</a>
+                  <a class="{% if view_name == 'users:logout' %}nav-item nav-link active {% else %} nav-item nav-link {% endif %}" href="{% url 'users:logout' %}">Регистрация</a>
+              {% endif %}
+          </nav>
+              {% endwith %}
       </div>
     </nav>
 </header>
