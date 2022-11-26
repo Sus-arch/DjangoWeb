@@ -7,8 +7,11 @@ from users.forms import LoginForm
 app_name = 'users'
 
 urlpatterns = [
-    path('login/', LoginView.as_view(template_name='users/login.html',
-                                     authentication_form=LoginForm),
+    path('login/',
+         LoginView.as_view(template_name='users/login.html',
+                           authentication_form=LoginForm),
          name='login'),
-    path('logout/', LogoutView.as_view(template_name='users/logout.html'), name='logout'),
+    path('logout/',
+         LogoutView.as_view(template_name='users/logout.html'),
+         name='logout'),
 ]
