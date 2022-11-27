@@ -1,5 +1,5 @@
 from django.contrib.auth import login
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.contrib.auth.models import User
 
@@ -33,6 +33,23 @@ def user_list(request):
 
     context = {
         'users': users
+    }
+
+    return render(request, template, context)
+
+
+def user_detail(request, pk: int):
+    template = 'users/user_detail.html'
+    search_user = get_object_or_404(User.objects
+                                    .values('username',
+                                            'email',
+                                            'first_name',
+                                            'last_name',
+                                            'profile__birthday'),
+                                    pk=pk)
+
+    context = {
+        'user': search_user
     }
 
     return render(request, template, context)
