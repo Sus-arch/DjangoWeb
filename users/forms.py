@@ -20,7 +20,8 @@ class CustomPasswordChangeForm(BaseForm, PasswordChangeForm):
 class CustomPasswordResetForm(BaseForm, PasswordResetForm):
     def clean_email(self):
         email = self.cleaned_data['email']
-        if not User.objects.filter(email__iexact=email, is_active=True).exists():
+        if not User.objects.filter(email__iexact=email,
+                                   is_active=True).exists():
             msg = _('К сожалению нам не удалось отправить сообщение')
             self.add_error('email', msg)
         return email
