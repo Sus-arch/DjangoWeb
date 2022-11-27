@@ -1,9 +1,11 @@
+from django.contrib import messages
 from django.contrib.auth import login
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
-from django.contrib.auth.models import User
 
-from users.forms import CustomUserCreationForm
+from users.forms import CustomUserCreationForm, CustomUserChangeForm, UpdateProfileForm
 
 
 def singup(request):
@@ -53,3 +55,26 @@ def user_detail(request, pk: int):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def profile(request):
+    template = 'users/profile.html'
+
+    form = CustomUserChangeForm(request.POST or None, instance=request.user)
+    profile_form = UpdateProfileForm(request.POST or None, instance=request.user.profile)
+    context = {
+        'form': form,
+        'profile_form': profile_form,
+    }
+
+    if request.method == 'POST' and form.is_valid() and profile_form.is_valid():
+        form.save()
+        profile_form.save()
+        messages.success(request, 'Изменения сохранены')
+        return redirect(reverse('users:profile'))
+
+    return render(request, template, context)
+
+
+

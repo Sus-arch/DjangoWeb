@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Мой аккаунт</h2>
+    {% if messages %}
+        <div class="text-bg-success p-3">
+            <ul class="messages">
+                {% for message in messages %}
+                    <h2 {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </h2>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {% include 'includes/user_form.html' with profile=1 %}
+{% endblock %}
