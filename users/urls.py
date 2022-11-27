@@ -2,7 +2,7 @@ from django.contrib.auth import views
 from django.urls import path
 
 from users.forms import LoginForm, CustomPasswordChangeForm, CustomPasswordResetForm, CustomSetPasswordForm
-from . import views as user_views
+from users.views import singup, user_list, user_detail, profile
 
 
 app_name = 'users'
@@ -36,11 +36,11 @@ urlpatterns = [
          views.PasswordResetDoneView.as_view(template_name='users/reset_password_done.html'),
          name='reset_password_done'),
     path('singup/',
-         user_views.singup, name='singup'),
+         singup, name='singup'),
     path('user_list/',
-         user_views.user_list, name='user_list'),
+         user_list, name='user_list'),
     path('user_detail/<pk>/',
-         user_views.user_detail, name='user_detail'),
+         user_detail, name='user_detail'),
     path('profile/',
-         user_views.profile, name='profile'),
+         profile, name='profile'),
 ]

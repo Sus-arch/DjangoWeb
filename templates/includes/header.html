@@ -10,7 +10,7 @@
                     <a class="{% if view_name == 'users:user_list' %}nav-item nav-link active {% else %} nav-item nav-link {% endif %}" href="{% url 'users:user_list' %}">Пользователи</a>
                 </nav>
                 <nav class="nav nav-pills nav-justified">
-                    {% if request.user.is_authenticated %}
+                    {% if user and user.is_authenticated %}
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{{ request.user.username }}</button>
                             <ul class="dropdown-menu">
