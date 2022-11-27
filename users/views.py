@@ -20,6 +20,8 @@ def singup(request):
 
     if request.method == 'POST' and form.is_valid():
         user = form.save()
+        item = Profile.objects.create(user=user)
+        item.save()
         login(request, user)
         return redirect(reverse('homepage:home'))
 

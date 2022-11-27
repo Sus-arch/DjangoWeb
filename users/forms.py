@@ -4,48 +4,27 @@ from django.contrib.auth.forms import AuthenticationForm, \
     UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
 
+from core.forms import BaseForm
 from users.models import Profile
 
 
-class LoginForm(AuthenticationForm):
-    def __init__(self, *args, **kwargs):
-        self.request = kwargs.pop('request', None)
-        super(LoginForm, self).__init__(*args, **kwargs)
-        for field in self.visible_fields():
-            field.field.widget.attrs['class'] = 'form-control'
+class LoginForm(BaseForm, AuthenticationForm):
+    pass
 
 
-class CustomPasswordChangeForm(PasswordChangeForm):
-    def __init__(self, *args, **kwargs):
-        self.request = kwargs.pop('request', None)
-        super(CustomPasswordChangeForm, self).__init__(*args, **kwargs)
-        for field in self.visible_fields():
-            field.field.widget.attrs['class'] = 'form-control'
+class CustomPasswordChangeForm(BaseForm, PasswordChangeForm):
+    pass
 
 
-class CustomPasswordResetForm(PasswordResetForm):
-    def __init__(self, *args, **kwargs):
-        self.request = kwargs.pop('request', None)
-        super(CustomPasswordResetForm, self).__init__(*args, **kwargs)
-        for field in self.visible_fields():
-            field.field.widget.attrs['class'] = 'form-control'
+class CustomPasswordResetForm(BaseForm, PasswordResetForm):
+    pass
 
 
-class CustomSetPasswordForm(SetPasswordForm):
-    def __init__(self, *args, **kwargs):
-        self.request = kwargs.pop('request', None)
-        super(CustomSetPasswordForm, self).__init__(*args, **kwargs)
-        for field in self.visible_fields():
-            field.field.widget.attrs['class'] = 'form-control'
+class CustomSetPasswordForm(BaseForm, SetPasswordForm):
+    pass
 
 
-class CustomUserCreationForm(UserCreationForm):
-    def __init__(self, *args, **kwargs):
-        self.request = kwargs.pop('request', None)
-        super(CustomUserCreationForm, self).__init__(*args, **kwargs)
-        for field in self.visible_fields():
-            field.field.widget.attrs['class'] = 'form-control'
-
+class CustomUserCreationForm(BaseForm, UserCreationForm):
     class Meta:
         model = User
         fields = (
@@ -56,14 +35,8 @@ class CustomUserCreationForm(UserCreationForm):
         )
 
 
-class CustomUserChangeForm(UserChangeForm):
+class CustomUserChangeForm(BaseForm, UserChangeForm):
     password = None
-
-    def __init__(self, *args, **kwargs):
-        self.request = kwargs.pop('request', None)
-        super(CustomUserChangeForm, self).__init__(*args, **kwargs)
-        for field in self.visible_fields():
-            field.field.widget.attrs['class'] = 'form-control'
 
     class Meta:
         model = User
@@ -74,12 +47,7 @@ class CustomUserChangeForm(UserChangeForm):
         )
 
 
-class UpdateProfileForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for field in self.visible_fields():
-            field.field.widget.attrs['class'] = 'form-control'
-
+class UpdateProfileForm(BaseForm, forms.ModelForm):
     class Meta:
         model = Profile
         fields = (
