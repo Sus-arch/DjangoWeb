@@ -72,13 +72,15 @@ def profile(request):
         item.save()
 
     form = CustomUserChangeForm(request.POST or None, instance=request.user)
-    profile_form = UpdateProfileForm(request.POST or None, instance=request.user.profile)
+    profile_form = UpdateProfileForm(request.POST or None,
+                                     instance=request.user.profile)
     context = {
         'form': form,
         'profile_form': profile_form,
     }
 
-    if request.method == 'POST' and form.is_valid() and profile_form.is_valid():
+    if (request.method == 'POST' and form.is_valid()
+            and profile_form.is_valid()):
         form.save()
         profile_form.save()
         messages.success(request, 'Изменения сохранены')
