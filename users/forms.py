@@ -83,3 +83,6 @@ class UpdateProfileForm(forms.ModelForm):
         fields = (
             Profile.birthday.field.name,
         )
+        help_texts = {
+            Profile.birthday.field.name: 'Формат: гггг-мм-дд'
+        }

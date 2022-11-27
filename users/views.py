@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 
 from users.forms import CustomUserCreationForm, CustomUserChangeForm, UpdateProfileForm
+from users.models import Profile
 
 
 def singup(request):
@@ -26,12 +27,15 @@ def singup(request):
 
 def user_list(request):
     template = 'users/user_list.html'
-    users = (User.objects.all().filter(is_active=True)
-             .values('username',
-                     'email',
-                     'first_name',
-                     'last_name',
-                     'profile__birthday'))
+    users = (
+        User.objects.all()
+        .filter(is_active=True)
+        .values('username',
+                'email',
+                'first_name',
+                'last_name',
+                'profile__birthday')
+    )
 
     context = {
         'users': users
@@ -42,13 +46,14 @@ def user_list(request):
 
 def user_detail(request, pk: int):
     template = 'users/user_detail.html'
-    search_user = get_object_or_404(User.objects
-                                    .values('username',
-                                            'email',
-                                            'first_name',
-                                            'last_name',
-                                            'profile__birthday'),
-                                    pk=pk)
+    search_user = get_object_or_404(
+        User.objects.values('username',
+                            'email',
+                            'first_name',
+                            'last_name',
+                            'profile__birthday'),
+        pk=pk,
+    )
 
     context = {
         'user': search_user
@@ -60,6 +65,10 @@ def user_detail(request, pk: int):
 @login_required
 def profile(request):
     template = 'users/profile.html'
+
+    if not Profile.objects.filter(user=request.user.id).exists():
+        item = Profile.objects.create(user=request.user)
+        item.save()
 
     form = CustomUserChangeForm(request.POST or None, instance=request.user)
     profile_form = UpdateProfileForm(request.POST or None, instance=request.user.profile)
