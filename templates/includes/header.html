@@ -20,7 +20,7 @@
                   </div>
               {% else %}
                   <a class="{% if view_name == 'users:login' %}nav-item nav-link active {% else %} nav-item nav-link {% endif %}" href="{% url 'users:login' %}">Вход</a>
-                  <a class="{% if view_name == 'users:logout' %}nav-item nav-link active {% else %} nav-item nav-link {% endif %}" href="{% url 'users:logout' %}">Регистрация</a>
+                  <a class="{% if view_name == 'users:logout' %}nav-item nav-link active {% else %} nav-item nav-link {% endif %}" href="{% url 'users:singup' %}">Регистрация</a>
               {% endif %}
           </nav>
               {% endwith %}

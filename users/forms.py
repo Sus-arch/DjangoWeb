@@ -1,5 +1,5 @@
-from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, PasswordResetForm, SetPasswordForm
-
+from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, PasswordResetForm, SetPasswordForm, UserCreationForm
+from django.contrib.auth.models import User
 
 class LoginForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
@@ -31,3 +31,18 @@ class CustomSetPasswordForm(SetPasswordForm):
         super(CustomSetPasswordForm, self).__init__(*args, **kwargs)
         for field in self.visible_fields():
             field.field.widget.attrs['class'] = 'form-control'
+
+
+class CustomUserCreationForm(UserCreationForm):
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop('request', None)
+        super(CustomUserCreationForm, self).__init__(*args, **kwargs)
+        for field in self.visible_fields():
+            field.field.widget.attrs['class'] = 'form-control'
+
+    class Meta:
+        model = User
+        fields = (
+            User.username.field.name,
+            User.email.field.name,
+        )
