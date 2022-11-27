@@ -1,0 +1,7 @@
+<div>
+    <h3>{{ user.username }}</h3>
+    <p>{% if user.first_name %}Имя: {{ user.first_name }}{% endif %}</p>
+    <p>{% if user.last_name %}Фамилия: {{ user.last_name }}{% endif %}</p>
+    <p>{% if user.email %}Электронная почта: {{ user.email }}{% endif %}</p>
+    <p>{% if user.profile__birthday %}Дата рождения: {{ user.profile__birthday }}{% endif %}</p>
+</div>

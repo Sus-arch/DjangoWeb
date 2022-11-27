@@ -37,4 +37,6 @@ urlpatterns = [
          name='reset_password_done'),
     path('singup/',
          user_views.singup, name='singup'),
+    path('user_list/',
+         user_views.user_list, name='user_list'),
 ]

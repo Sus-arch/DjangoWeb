@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Все активные пользователи</h2>
+    {% for user in users %}
+        {% include 'includes/user_info.html' %}
+        <hr>
+    {% empty %}
+        <p>Ничего не найдено</p>
+    {% endfor %}
+{% endblock %}

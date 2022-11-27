@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, PasswordResetForm, SetPasswordForm, UserCreationForm
 from django.contrib.auth.models import User
 
+
 class LoginForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop('request', None)
@@ -45,4 +46,6 @@ class CustomUserCreationForm(UserCreationForm):
         fields = (
             User.username.field.name,
             User.email.field.name,
+            User.first_name.field.name,
+            User.last_name.field.name,
         )

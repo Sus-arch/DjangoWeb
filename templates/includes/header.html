@@ -7,6 +7,7 @@
                   <a class="{% if view_name == 'catalog:item_list' %}nav-item nav-link active {% else %} nav-item nav-link {% endif %}" href="{% url 'catalog:item_list' %}">Каталог</a>
                   <a class="{% if view_name == 'about:description' %}nav-item nav-link active {% else %} nav-item nav-link {% endif %}" href="{% url 'about:description' %}">О нас</a>
                   <a class="{% if view_name == 'feedback:feedback' %}nav-item nav-link active {% else %} nav-item nav-link {% endif %}" href="{% url 'feedback:feedback' %}">Фидбек</a>
+                  <a class="{% if view_name == 'users:user_list' %}nav-item nav-link active {% else %} nav-item nav-link {% endif %}" href="{% url 'users:user_list' %}">Пользователи</a>
           </nav>
           <nav class="nav nav-pills nav-justified">
               {% if user.is_authenticated %}
