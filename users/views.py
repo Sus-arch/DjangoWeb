@@ -75,6 +75,3 @@ def profile(request):
         return redirect(reverse('users:profile'))
 
     return render(request, template, context)
-
-
-

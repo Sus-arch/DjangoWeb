@@ -1,5 +1,5 @@
 from django.contrib.auth import views
-from django.urls import path, re_path
+from django.urls import path
 
 from users.forms import LoginForm, CustomPasswordChangeForm, CustomPasswordResetForm, CustomSetPasswordForm
 from . import views as user_views
@@ -42,5 +42,5 @@ urlpatterns = [
     path('user_detail/<pk>/',
          user_views.user_detail, name='user_detail'),
     path('profile/',
-         user_views.profile, name='profile')
+         user_views.profile, name='profile'),
 ]
