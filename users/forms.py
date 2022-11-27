@@ -3,6 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm, \
     PasswordChangeForm, PasswordResetForm, SetPasswordForm, \
     UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
+from django.utils.translation import ugettext_lazy as _
 
 from core.forms import BaseForm
 from users.models import Profile
@@ -17,7 +18,12 @@ class CustomPasswordChangeForm(BaseForm, PasswordChangeForm):
 
 
 class CustomPasswordResetForm(BaseForm, PasswordResetForm):
-    pass
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        if not User.objects.filter(email__iexact=email, is_active=True).exists():
+            msg = _('К сожалению нам не удалось отправить сообщение')
+            self.add_error('email', msg)
+        return email
 
 
 class CustomSetPasswordForm(BaseForm, SetPasswordForm):
