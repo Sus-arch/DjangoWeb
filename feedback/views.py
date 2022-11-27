@@ -1,7 +1,7 @@
+from django.contrib import messages
+from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.core.mail import send_mail
-from django.contrib import messages
 
 from feedback.forms import FeedbackForm
 from feedback.models import Feedback

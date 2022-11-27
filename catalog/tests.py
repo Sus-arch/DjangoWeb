@@ -1,9 +1,8 @@
-from django.test import Client, TestCase
 from django.core.exceptions import ValidationError
-
-from .models import Item, Category, Tag
+from django.test import Client, TestCase
 
 from core.tests import check_content_value
+from .models import Item, Category, Tag
 
 
 class StaticURLTests(TestCase):
