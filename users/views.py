@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 
-from users.forms import CustomUserCreationForm, CustomUserChangeForm, \
-    UpdateProfileForm
+from users.forms import CustomUserCreationForm, CustomUserChangeForm
+from users.forms import UpdateProfileForm
 from users.models import Profile
 
 

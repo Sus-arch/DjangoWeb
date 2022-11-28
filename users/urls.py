@@ -1,8 +1,8 @@
 from django.contrib.auth import views
 from django.urls import path
 
-from users.forms import LoginForm, CustomPasswordChangeForm, \
-    CustomPasswordResetForm, CustomSetPasswordForm
+from users.forms import LoginForm, CustomPasswordChangeForm
+from users.forms import CustomPasswordResetForm, CustomSetPasswordForm
 from users.views import singup, user_list, user_detail, profile
 
 app_name = 'users'
