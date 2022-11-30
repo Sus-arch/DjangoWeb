@@ -2,7 +2,7 @@
 
 {% block content %}
 <h2>Войти в аккаунт</h2>
-    {% include 'includes/user_form.html' %}
+    {% include 'includes/user_form.html' with login=1 %}
     <br>
     <a href="{% url 'users:reset_password' %}">Забыли пароль?</a>
 {% endblock %}

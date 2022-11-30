@@ -11,11 +11,24 @@
                 {{ error | escape }}
             </div>
         {% endfor %}
-    {% endif %}
-    <br>
-    <form method="post">
-        {% csrf_token %}
-        {% for field in form %}
+{% endif %}
+<br>
+<form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        <div>
+            {% if login == 1 and forloop.counter0 == 0 %}
+                 <p>Электронная почта:</p>{{ field }}
+            {% else %}
+                {{ field.label_tag }}{{ field }}
+            {% endif %}
+            {% if field.help_text %}
+                <p class="help">{{ field.help_text | safe }}</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+    {% if profile == 1 %}
+        {% for field in profile_form %}
             <div>
                 {{ field.label_tag }} {{ field }}
                 {% if field.help_text %}
@@ -23,16 +36,7 @@
                 {% endif %}
             </div>
         {% endfor %}
-        {% if profile == 1 %}
-            {% for field in profile_form %}
-                <div>
-                    {{ field.label_tag }} {{ field }}
-                    {% if field.help_text %}
-                        <p class="help">{{ field.help_text | safe }}</p>
-                    {% endif %}
-                </div>
-            {% endfor %}
-        {% endif %}
-        <br>
-        <input class="btn btn-primary" type="submit" value="Подтвердить">
-    </form>
+    {% endif %}
+    <br>
+    <input class="btn btn-primary" type="submit" value="Подтвердить">
+</form>

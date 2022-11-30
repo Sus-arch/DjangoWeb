@@ -101,6 +101,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'users.backends.EmailBackend',
+]
+
 LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'

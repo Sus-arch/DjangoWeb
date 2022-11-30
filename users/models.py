@@ -12,3 +12,6 @@ class Profile(models.Model):
     class Meta:
         verbose_name = 'дополнительная информация'
         verbose_name_plural = 'дополнительная информация'
+
+
+User._meta.get_field('email')._unique = True
