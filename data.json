@@ -1,1218 +1,805 @@
 [
 {
-  "model": "auth.user",
-  "fields": {
-    "password": "pbkdf2_sha256$260000$fh506RalsxwkgqabMhgfcV$berJAkCNnyTcnWDJ78HYH/Six5pY3x+4yPiDzD3IPCk=",
-    "last_login": "2022-11-09T18:06:50.406Z",
-    "is_superuser": true,
-    "username": "admin",
-    "first_name": "",
-    "last_name": "",
-    "email": "andrei@list.ru",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2022-11-09T18:06:40.063Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "hovpxmnea82o2xyyjrk5anpaunisehxq",
-  "fields": {
-    "session_data": ".eJxVjDsOwjAQRO_iGll24vWHkj5nsPzZxQFkS3FSIe5OIqWAcua9mTfzYVuL3zoufs7syiS7_HYxpCfWA-RHqPfGU6vrMkd-KPyknU8t4-t2un8HJfSyrxXo5BARSOpoB4zakrGjU9oBCjSZxpQD0R6VwCFYacCCzo4IjQDJPl_wADgI:1ospTO:Usgolxy6Ok8e1zHad-pf0XFDGweAZP3f3Pu6Plcp11o",
-    "expire_date": "2022-11-23T18:06:50.413Z"
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 1,
-  "fields": {
-    "name": "123",
-    "is_published": true,
-    "slug": "book_am",
-    "weight": 100,
-    "canonical_name": "123"
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 2,
-  "fields": {
-    "name": "Книга",
-    "is_published": true,
-    "slug": "book",
-    "weight": 150,
-    "canonical_name": "книга"
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 3,
-  "fields": {
-    "name": "Дом",
-    "is_published": true,
-    "slug": "home",
-    "weight": 100,
-    "canonical_name": "дом"
-  }
-},
-{
-  "model": "catalog.tag",
-  "pk": 1,
-  "fields": {
-    "name": "вап",
-    "is_published": true,
-    "slug": "book_am",
-    "canonical_name": "вап"
-  }
-},
-{
-  "model": "catalog.tag",
-  "pk": 2,
-  "fields": {
-    "name": "Акция",
-    "is_published": true,
-    "slug": "aktion",
-    "canonical_name": "акция"
-  }
-},
-{
-  "model": "catalog.tag",
-  "pk": 3,
-  "fields": {
-    "name": "Скоро закончится",
-    "is_published": true,
-    "slug": "limited",
-    "canonical_name": "скоро закончится"
-  }
-},
-{
-  "model": "catalog.tag",
-  "pk": 4,
-  "fields": {
-    "name": "Популярно",
-    "is_published": true,
-    "slug": "popular",
-    "canonical_name": "популярно"
-  }
-},
-{
-  "model": "catalog.tag",
-  "pk": 5,
-  "fields": {
-    "name": "Новинка",
-    "is_published": true,
-    "slug": "new",
-    "canonical_name": "новинка"
-  }
-},
-{
-  "model": "catalog.gallery",
-  "pk": 1,
-  "fields": {
-    "image": "uploads/2022/11/300px-Lübbenau-Spreewald_in_OSL.svg.png"
-  }
-},
-{
-  "model": "catalog.item",
-  "pk": 3,
-  "fields": {
-    "name": "Книга.",
-    "is_published": true,
-    "is_on_main": true,
-    "text": "<p>Роскошно</p>",
-    "category": 2,
-    "image": "uploads/2022/11/Снимок_экрана_2021-12-14_160417.png",
-    "gallery_photo": null,
-    "tags": [
-      2,
-      3
-    ]
-  }
-},
-{
-  "model": "catalog.item",
-  "pk": 4,
-  "fields": {
-    "name": "Война и мир",
-    "is_published": true,
-    "is_on_main": true,
-    "text": "<p>Роскошно Роскошно Роскошно Роскошно РоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошноРоскошно Роскошно Роскошно РоскошноРоскошно Роскошно Роскошно РоскошноРоскошно Роскошно Роскошно Роскошно</p>",
-    "category": 2,
-    "image": "",
-    "gallery_photo": null,
-    "tags": [
-      5
-    ]
-  }
-},
-{
-  "model": "catalog.item",
-  "pk": 5,
-  "fields": {
-    "name": "Шалаш",
-    "is_published": true,
-    "is_on_main": true,
-    "text": "<p>Роскошно</p>",
-    "category": 2,
-    "image": "",
-    "gallery_photo": null,
-    "tags": [
-      4
-    ]
-  }
-},
-{
-  "model": "catalog.item",
-  "pk": 6,
-  "fields": {
-    "name": "Дом Ф.Д",
-    "is_published": true,
-    "is_on_main": true,
-    "text": "<p>превосходно</p>",
-    "category": 2,
-    "image": "uploads/2022/11/Кижма_Дома.JPG",
-    "gallery_photo": 1,
-    "tags": [
-      2,
-      3
-    ]
-  }
-},
-{
-  "model": "thumbnail.kvstore",
-  "pk": "sorl-thumbnail||image||048a9e19c3531de97f273923c353b63c",
-  "fields": {
-    "value": "{\"name\": \"uploads/2022/11/\\u041a\\u0438\\u0436\\u043c\\u0430_\\u0414\\u043e\\u043c\\u0430.JPG\", \"storage\": \"django.core.files.storage.FileSystemStorage\", \"size\": [800, 600]}"
-  }
-},
-{
-  "model": "thumbnail.kvstore",
-  "pk": "sorl-thumbnail||image||54509845829abdb59cecd5ef5f93261a",
-  "fields": {
-    "value": "{\"name\": \"uploads/2022/11/\\u0421\\u043d\\u0438\\u043c\\u043e\\u043a_\\u044d\\u043a\\u0440\\u0430\\u043d\\u0430_2021-12-14_160417.png\", \"storage\": \"django.core.files.storage.FileSystemStorage\", \"size\": [1920, 1080]}"
-  }
-},
-{
-  "model": "thumbnail.kvstore",
-  "pk": "sorl-thumbnail||image||571d25af81744cc5358299a9ba238915",
-  "fields": {
-    "value": "{\"name\": \"cache/fa/04/fa04f12684a2f8ceab5eb6a0a6a76e34.jpg\", \"storage\": \"django.core.files.storage.FileSystemStorage\", \"size\": [300, 300]}"
-  }
-},
-{
-  "model": "thumbnail.kvstore",
-  "pk": "sorl-thumbnail||image||7f312f314a186fff371825af376649d2",
-  "fields": {
-    "value": "{\"name\": \"cache/ff/f9/fff9c6f221b85bebfaf39b3473d5e4fb.jpg\", \"storage\": \"django.core.files.storage.FileSystemStorage\", \"size\": [300, 300]}"
-  }
-},
-{
-  "model": "thumbnail.kvstore",
-  "pk": "sorl-thumbnail||image||e7183c89d5ffea818f441d4d92877614",
-  "fields": {
-    "value": "{\"name\": \"uploads/2022/11/300px-L\\u00fcbbenau-Spreewald_in_OSL.svg.png\", \"storage\": \"django.core.files.storage.FileSystemStorage\", \"size\": [300, 300]}"
-  }
-},
-{
-  "model": "thumbnail.kvstore",
-  "pk": "sorl-thumbnail||image||ec95f1ddac22a42b8c9c315f7738a56d",
-  "fields": {
-    "value": "{\"name\": \"cache/53/8b/538b722bc73b33ee0c61196d2e5335aa.jpg\", \"storage\": \"django.core.files.storage.FileSystemStorage\", \"size\": [300, 300]}"
-  }
-},
-{
-  "model": "thumbnail.kvstore",
-  "pk": "sorl-thumbnail||thumbnails||048a9e19c3531de97f273923c353b63c",
-  "fields": {
-    "value": "[\"571d25af81744cc5358299a9ba238915\"]"
-  }
-},
-{
-  "model": "thumbnail.kvstore",
-  "pk": "sorl-thumbnail||thumbnails||54509845829abdb59cecd5ef5f93261a",
-  "fields": {
-    "value": "[\"7f312f314a186fff371825af376649d2\"]"
-  }
-},
-{
-  "model": "thumbnail.kvstore",
-  "pk": "sorl-thumbnail||thumbnails||e7183c89d5ffea818f441d4d92877614",
-  "fields": {
-    "value": "[\"ec95f1ddac22a42b8c9c315f7738a56d\"]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 1,
-  "fields": {
-    "action_time": "2022-11-09T18:07:13.421Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "category"
-    ],
-    "object_id": "1",
-    "object_repr": "123",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 2,
-  "fields": {
-    "action_time": "2022-11-09T18:07:17.851Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "tag"
-    ],
-    "object_id": "1",
-    "object_repr": "вап",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 3,
-  "fields": {
-    "action_time": "2022-11-09T18:07:22.315Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "1",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 4,
-  "fields": {
-    "action_time": "2022-11-09T18:07:29.012Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "1",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 5,
-  "fields": {
-    "action_time": "2022-11-09T18:07:40.709Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "1",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 6,
-  "fields": {
-    "action_time": "2022-11-09T18:07:47.546Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "gallery"
-    ],
-    "object_id": "1",
-    "object_repr": "/media/uploads/2022/11/300px-L%C3%BCbbenau-Spreewald_in_OSL.svg.png",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 7,
-  "fields": {
-    "action_time": "2022-11-09T18:07:48.464Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "1",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0413\\u0430\\u043b\\u0435\\u0440\\u0435\\u044f\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 8,
-  "fields": {
-    "action_time": "2022-11-09T18:09:25.335Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "1",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 9,
-  "fields": {
-    "action_time": "2022-11-10T20:43:37.311Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 10,
-  "fields": {
-    "action_time": "2022-11-10T20:43:52.728Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 11,
-  "fields": {
-    "action_time": "2022-11-10T20:45:06.140Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 12,
-  "fields": {
-    "action_time": "2022-11-10T20:45:14.897Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 13,
-  "fields": {
-    "action_time": "2022-11-10T20:46:32.907Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 14,
-  "fields": {
-    "action_time": "2022-11-10T20:48:52.085Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 15,
-  "fields": {
-    "action_time": "2022-11-10T20:49:12.299Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 16,
-  "fields": {
-    "action_time": "2022-11-10T20:50:50.177Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 17,
-  "fields": {
-    "action_time": "2022-11-10T20:51:12.896Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 18,
-  "fields": {
-    "action_time": "2022-11-10T20:51:24.899Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 19,
-  "fields": {
-    "action_time": "2022-11-10T20:51:35.917Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 20,
-  "fields": {
-    "action_time": "2022-11-10T20:52:07.318Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 21,
-  "fields": {
-    "action_time": "2022-11-10T20:52:27.358Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 22,
-  "fields": {
-    "action_time": "2022-11-10T20:52:45.524Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 23,
-  "fields": {
-    "action_time": "2022-11-10T20:52:49.140Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 24,
-  "fields": {
-    "action_time": "2022-11-10T20:54:11.504Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 25,
-  "fields": {
-    "action_time": "2022-11-10T20:54:18.205Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 26,
-  "fields": {
-    "action_time": "2022-11-10T21:08:43.676Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 27,
-  "fields": {
-    "action_time": "2022-11-10T21:08:55.067Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 28,
-  "fields": {
-    "action_time": "2022-11-10T21:11:39.613Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 29,
-  "fields": {
-    "action_time": "2022-11-10T21:11:43.325Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 30,
-  "fields": {
-    "action_time": "2022-11-10T21:11:51.386Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 31,
-  "fields": {
-    "action_time": "2022-11-13T14:42:04.017Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430 \\u0433\\u043b\\u0430\\u0432\\u043d\\u043e\\u0439\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 32,
-  "fields": {
-    "action_time": "2022-11-13T17:08:23.358Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 33,
-  "fields": {
-    "action_time": "2022-11-13T17:19:58.307Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u043e\\u0432\\u0430\\u043d\\u043e\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 34,
-  "fields": {
-    "action_time": "2022-11-13T17:20:09.521Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u043e\\u0432\\u0430\\u043d\\u043e\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 35,
-  "fields": {
-    "action_time": "2022-11-13T17:43:19.559Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "tag"
-    ],
-    "object_id": "2",
-    "object_repr": "Акция",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 36,
-  "fields": {
-    "action_time": "2022-11-13T17:43:27.603Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "tag"
-    ],
-    "object_id": "3",
-    "object_repr": "Скоро закончится",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 37,
-  "fields": {
-    "action_time": "2022-11-13T17:43:51.493Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "tag"
-    ],
-    "object_id": "4",
-    "object_repr": "Популярно",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 38,
-  "fields": {
-    "action_time": "2022-11-13T17:44:09.289Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "tag"
-    ],
-    "object_id": "5",
-    "object_repr": "Новинка",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 39,
-  "fields": {
-    "action_time": "2022-11-13T17:44:19.627Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "category"
-    ],
-    "object_id": "2",
-    "object_repr": "Книга",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 40,
-  "fields": {
-    "action_time": "2022-11-13T17:44:31.525Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "category"
-    ],
-    "object_id": "3",
-    "object_repr": "Дом",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 41,
-  "fields": {
-    "action_time": "2022-11-13T17:45:15.213Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "3",
-    "object_repr": "Книга.",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 42,
-  "fields": {
-    "action_time": "2022-11-13T17:46:19.033Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "4",
-    "object_repr": "Война и мир",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 43,
-  "fields": {
-    "action_time": "2022-11-13T17:46:27.426Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "4",
-    "object_repr": "Война и мир",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430 \\u0433\\u043b\\u0430\\u0432\\u043d\\u043e\\u0439\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 44,
-  "fields": {
-    "action_time": "2022-11-13T17:46:46.092Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "5",
-    "object_repr": "Шалаш",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 45,
-  "fields": {
-    "action_time": "2022-11-13T18:17:45.089Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u043e\\u0432\\u0430\\u043d\\u043e\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 46,
-  "fields": {
-    "action_time": "2022-11-13T18:18:02.730Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u043e\\u0432\\u0430\\u043d\\u043e\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 47,
-  "fields": {
-    "action_time": "2022-11-17T22:20:33.987Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "5",
-    "object_repr": "Шалаш",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u044f\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 48,
-  "fields": {
-    "action_time": "2022-11-17T22:20:37.979Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "4",
-    "object_repr": "Война и мир",
-    "action_flag": 2,
-    "change_message": "[]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 49,
-  "fields": {
-    "action_time": "2022-11-17T22:20:42.354Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. Маштакова",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u044f\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 50,
-  "fields": {
-    "action_time": "2022-11-22T21:56:58.308Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. МаштаковаFF",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 51,
-  "fields": {
-    "action_time": "2022-11-22T21:58:14.086Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "2",
-    "object_repr": "Дом Ф.Д. МаштаковаFF",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 52,
-  "fields": {
-    "action_time": "2022-11-22T22:21:31.421Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "6",
-    "object_repr": "Дом Ф.Д",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 53,
-  "fields": {
-    "action_time": "2022-11-22T22:21:42.171Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "6",
-    "object_repr": "Дом Ф.Д",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 54,
-  "fields": {
-    "action_time": "2022-11-22T22:21:57.627Z",
-    "user": [
-      "admin"
-    ],
-    "content_type": [
-      "catalog",
-      "item"
-    ],
-    "object_id": "6",
-    "object_repr": "Дом Ф.Д",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
-  }
+   "model": "admin.logentry",
+   "pk": 1,
+   "fields": {
+      "action_time": "2022-12-01T18:10:48.721Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "1",
+      "object_repr": "123",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+   }
+},
+{
+   "model": "admin.logentry",
+   "pk": 2,
+   "fields": {
+      "action_time": "2022-12-01T18:10:52.613Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "2",
+      "object_repr": "124",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+   }
+},
+{
+   "model": "admin.logentry",
+   "pk": 3,
+   "fields": {
+      "action_time": "2022-12-01T18:10:56.645Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "3",
+      "object_repr": "125",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+   }
+},
+{
+   "model": "admin.logentry",
+   "pk": 4,
+   "fields": {
+      "action_time": "2022-12-01T18:11:02.349Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "4",
+      "object_repr": "126",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+   }
+},
+{
+   "model": "admin.logentry",
+   "pk": 5,
+   "fields": {
+      "action_time": "2022-12-01T18:11:06.643Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "2",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+   }
+},
+{
+   "model": "admin.logentry",
+   "pk": 6,
+   "fields": {
+      "action_time": "2022-12-01T18:11:32.936Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+   }
+},
+{
+   "model": "admin.logentry",
+   "pk": 7,
+   "fields": {
+      "action_time": "2022-12-01T18:11:40.848Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "2",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+   }
+},
+{
+   "model": "admin.logentry",
+   "pk": 8,
+   "fields": {
+      "action_time": "2022-12-01T18:11:47.919Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "3",
+      "object_repr": "3",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+   }
+},
+{
+   "model": "admin.logentry",
+   "pk": 9,
+   "fields": {
+      "action_time": "2022-12-01T18:11:57.353Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "4",
+      "object_repr": "Дом Ф.Д. Маштакова",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+   }
+},
+{
+   "model": "admin.logentry",
+   "pk": 10,
+   "fields": {
+      "action_time": "2022-12-01T18:12:47.695Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "4",
+      "object_repr": "Дом Ф.Д. Маштакова",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430 \\u0433\\u043b\\u0430\\u0432\\u043d\\u043e\\u0439\"]}}]"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 1,
+   "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 2,
+   "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 3,
+   "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 4,
+   "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 5,
+   "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 6,
+   "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 7,
+   "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 8,
+   "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 9,
+   "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 10,
+   "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 11,
+   "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 12,
+   "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 13,
+   "fields": {
+      "name": "Can add content type",
+      "content_type": 4,
+      "codename": "add_contenttype"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 14,
+   "fields": {
+      "name": "Can change content type",
+      "content_type": 4,
+      "codename": "change_contenttype"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 15,
+   "fields": {
+      "name": "Can delete content type",
+      "content_type": 4,
+      "codename": "delete_contenttype"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 16,
+   "fields": {
+      "name": "Can view content type",
+      "content_type": 4,
+      "codename": "view_contenttype"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 17,
+   "fields": {
+      "name": "Can add session",
+      "content_type": 5,
+      "codename": "add_session"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 18,
+   "fields": {
+      "name": "Can change session",
+      "content_type": 5,
+      "codename": "change_session"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 19,
+   "fields": {
+      "name": "Can delete session",
+      "content_type": 5,
+      "codename": "delete_session"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 20,
+   "fields": {
+      "name": "Can view session",
+      "content_type": 5,
+      "codename": "view_session"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 21,
+   "fields": {
+      "name": "Can add категория",
+      "content_type": 6,
+      "codename": "add_category"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 22,
+   "fields": {
+      "name": "Can change категория",
+      "content_type": 6,
+      "codename": "change_category"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 23,
+   "fields": {
+      "name": "Can delete категория",
+      "content_type": 6,
+      "codename": "delete_category"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 24,
+   "fields": {
+      "name": "Can view категория",
+      "content_type": 6,
+      "codename": "view_category"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 25,
+   "fields": {
+      "name": "Can add галерея фото",
+      "content_type": 7,
+      "codename": "add_gallery"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 26,
+   "fields": {
+      "name": "Can change галерея фото",
+      "content_type": 7,
+      "codename": "change_gallery"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 27,
+   "fields": {
+      "name": "Can delete галерея фото",
+      "content_type": 7,
+      "codename": "delete_gallery"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 28,
+   "fields": {
+      "name": "Can view галерея фото",
+      "content_type": 7,
+      "codename": "view_gallery"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 29,
+   "fields": {
+      "name": "Can add тег",
+      "content_type": 8,
+      "codename": "add_tag"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 30,
+   "fields": {
+      "name": "Can change тег",
+      "content_type": 8,
+      "codename": "change_tag"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 31,
+   "fields": {
+      "name": "Can delete тег",
+      "content_type": 8,
+      "codename": "delete_tag"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 32,
+   "fields": {
+      "name": "Can view тег",
+      "content_type": 8,
+      "codename": "view_tag"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 33,
+   "fields": {
+      "name": "Can add товар",
+      "content_type": 9,
+      "codename": "add_item"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 34,
+   "fields": {
+      "name": "Can change товар",
+      "content_type": 9,
+      "codename": "change_item"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 35,
+   "fields": {
+      "name": "Can delete товар",
+      "content_type": 9,
+      "codename": "delete_item"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 36,
+   "fields": {
+      "name": "Can view товар",
+      "content_type": 9,
+      "codename": "view_item"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 37,
+   "fields": {
+      "name": "Can add feedback",
+      "content_type": 10,
+      "codename": "add_feedback"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 38,
+   "fields": {
+      "name": "Can change feedback",
+      "content_type": 10,
+      "codename": "change_feedback"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 39,
+   "fields": {
+      "name": "Can delete feedback",
+      "content_type": 10,
+      "codename": "delete_feedback"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 40,
+   "fields": {
+      "name": "Can view feedback",
+      "content_type": 10,
+      "codename": "view_feedback"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 41,
+   "fields": {
+      "name": "Can add user",
+      "content_type": 11,
+      "codename": "add_customuser"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 42,
+   "fields": {
+      "name": "Can change user",
+      "content_type": 11,
+      "codename": "change_customuser"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 43,
+   "fields": {
+      "name": "Can delete user",
+      "content_type": 11,
+      "codename": "delete_customuser"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 44,
+   "fields": {
+      "name": "Can view user",
+      "content_type": 11,
+      "codename": "view_customuser"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 45,
+   "fields": {
+      "name": "Can add kv store",
+      "content_type": 12,
+      "codename": "add_kvstore"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 46,
+   "fields": {
+      "name": "Can change kv store",
+      "content_type": 12,
+      "codename": "change_kvstore"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 47,
+   "fields": {
+      "name": "Can delete kv store",
+      "content_type": 12,
+      "codename": "delete_kvstore"
+   }
+},
+{
+   "model": "auth.permission",
+   "pk": 48,
+   "fields": {
+      "name": "Can view kv store",
+      "content_type": 12,
+      "codename": "view_kvstore"
+   }
+},
+{
+   "model": "contenttypes.contenttype",
+   "pk": 1,
+   "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+   }
+},
+{
+   "model": "contenttypes.contenttype",
+   "pk": 2,
+   "fields": {
+      "app_label": "auth",
+      "model": "permission"
+   }
+},
+{
+   "model": "contenttypes.contenttype",
+   "pk": 3,
+   "fields": {
+      "app_label": "auth",
+      "model": "group"
+   }
+},
+{
+   "model": "contenttypes.contenttype",
+   "pk": 4,
+   "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+   }
+},
+{
+   "model": "contenttypes.contenttype",
+   "pk": 5,
+   "fields": {
+      "app_label": "sessions",
+      "model": "session"
+   }
+},
+{
+   "model": "contenttypes.contenttype",
+   "pk": 6,
+   "fields": {
+      "app_label": "catalog",
+      "model": "category"
+   }
+},
+{
+   "model": "contenttypes.contenttype",
+   "pk": 7,
+   "fields": {
+      "app_label": "catalog",
+      "model": "gallery"
+   }
+},
+{
+   "model": "contenttypes.contenttype",
+   "pk": 8,
+   "fields": {
+      "app_label": "catalog",
+      "model": "tag"
+   }
+},
+{
+   "model": "contenttypes.contenttype",
+   "pk": 9,
+   "fields": {
+      "app_label": "catalog",
+      "model": "item"
+   }
+},
+{
+   "model": "contenttypes.contenttype",
+   "pk": 10,
+   "fields": {
+      "app_label": "feedback",
+      "model": "feedback"
+   }
+},
+{
+   "model": "contenttypes.contenttype",
+   "pk": 11,
+   "fields": {
+      "app_label": "users",
+      "model": "customuser"
+   }
+},
+{
+   "model": "contenttypes.contenttype",
+   "pk": 12,
+   "fields": {
+      "app_label": "thumbnail",
+      "model": "kvstore"
+   }
+},
+{
+   "model": "sessions.session",
+   "pk": "fxd8bggb1zvfmrl1uyhtr86rrka4vhfi",
+   "fields": {
+      "session_data": ".eJxVizsKwzAQRO-ydTCSvI7klIGcQ4yiXWTyKSK7Cr67ZXCRNANv3syXIpa5xKXKJ06ZLmTp9Nsl3B_y3sWOtTu4drcXpuf1sH-Xglra3sAJu5SRhjAaozYP8Ajw6pShLOEs7G2QpnTsE8MGRu5bOG8y07oBosEy2w:1p0o1A:An1y8165npANcTal8GiyY00iSZWzlxVtZLhP2m7yzpk",
+      "expire_date": "2022-12-15T18:10:40.327Z"
+   }
+},
+{
+   "model": "catalog.category",
+   "pk": 1,
+   "fields": {
+      "name": "123",
+      "is_published": true,
+      "slug": "123",
+      "weight": 100,
+      "canonical_name": "123"
+   }
+},
+{
+   "model": "catalog.category",
+   "pk": 2,
+   "fields": {
+      "name": "124",
+      "is_published": true,
+      "slug": "124",
+      "weight": 100,
+      "canonical_name": "124"
+   }
+},
+{
+   "model": "catalog.category",
+   "pk": 3,
+   "fields": {
+      "name": "125",
+      "is_published": true,
+      "slug": "125",
+      "weight": 100,
+      "canonical_name": "125"
+   }
+},
+{
+   "model": "catalog.category",
+   "pk": 4,
+   "fields": {
+      "name": "126",
+      "is_published": true,
+      "slug": "126",
+      "weight": 100,
+      "canonical_name": "126"
+   }
+},
+{
+   "model": "catalog.tag",
+   "pk": 1,
+   "fields": {
+      "name": "2",
+      "is_published": true,
+      "slug": "2",
+      "canonical_name": "2"
+   }
+},
+{
+   "model": "catalog.item",
+   "pk": 1,
+   "fields": {
+      "name": "1",
+      "is_published": true,
+      "is_on_main": true,
+      "text": "<p>роскошно</p>",
+      "category": 1,
+      "image": "",
+      "gallery_photo": null,
+      "tags": [
+         1
+      ]
+   }
+},
+{
+   "model": "catalog.item",
+   "pk": 2,
+   "fields": {
+      "name": "2",
+      "is_published": true,
+      "is_on_main": true,
+      "text": "<p>роскошно</p>",
+      "category": 4,
+      "image": "",
+      "gallery_photo": null,
+      "tags": [
+         1
+      ]
+   }
+},
+{
+   "model": "catalog.item",
+   "pk": 3,
+   "fields": {
+      "name": "3",
+      "is_published": true,
+      "is_on_main": true,
+      "text": "<p>роскошно</p>",
+      "category": 2,
+      "image": "",
+      "gallery_photo": null,
+      "tags": [
+         1
+      ]
+   }
+},
+{
+   "model": "catalog.item",
+   "pk": 4,
+   "fields": {
+      "name": "Дом Ф.Д. Маштакова",
+      "is_published": true,
+      "is_on_main": true,
+      "text": "<p>роскошно</p>",
+      "category": 2,
+      "image": "",
+      "gallery_photo": null,
+      "tags": [
+         1
+      ]
+   }
+},
+{
+   "model": "users.customuser",
+   "pk": 1,
+   "fields": {
+      "password": "pbkdf2_sha256$260000$KLQ4REiaPJglXRAR3PImQP$ZqNe22KETNgJ+wYZqooMajN039SZwsNVwSccv7usZ0Y=",
+      "last_login": "2022-12-01T18:10:40.280Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "Andrei",
+      "last_name": "Kharin",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2022-12-01T17:48:08.541Z",
+      "email": "Andrei223@list.ru",
+      "birthday": "2004-08-05",
+      "groups": [],
+      "user_permissions": []
+   }
 }
 ]
