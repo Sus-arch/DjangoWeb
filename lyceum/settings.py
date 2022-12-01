@@ -105,6 +105,8 @@ AUTHENTICATION_BACKENDS = [
     'users.backends.EmailBackend',
 ]
 
+AUTH_USER_MODEL = 'users.CustomUser'
+
 LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'

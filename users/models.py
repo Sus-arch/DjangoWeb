@@ -1,17 +1,8 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 
 
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+class CustomUser(AbstractUser):
+    email = models.EmailField(_('email address'), unique=True)
     birthday = models.DateField('день рождения', blank=True, null=True)
-
-    def __str__(self):
-        return f'День рождения пользователя {self.user}'
-
-    class Meta:
-        verbose_name = 'дополнительная информация'
-        verbose_name_plural = 'дополнительная информация'
-
-
-User._meta.get_field('email')._unique = True

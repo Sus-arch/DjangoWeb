@@ -1,13 +1,14 @@
 from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 
 from users.forms import CustomUserCreationForm, CustomUserChangeForm
-from users.forms import UpdateProfileForm
-from users.models import Profile
+from django.contrib.auth import get_user_model
+
+
+User = get_user_model()
 
 
 def singup(request):
@@ -20,8 +21,6 @@ def singup(request):
 
     if request.method == 'POST' and form.is_valid():
         user = form.save()
-        item = Profile.objects.create(user=user)
-        item.save()
         login(request, user)
         return redirect(reverse('homepage:home'))
 
@@ -37,7 +36,7 @@ def user_list(request):
                 'email',
                 'first_name',
                 'last_name',
-                'profile__birthday')
+                'birthday')
     )
 
     context = {
@@ -54,7 +53,7 @@ def user_detail(request, pk: int):
                             'email',
                             'first_name',
                             'last_name',
-                            'profile__birthday'),
+                            'birthday'),
         pk=pk,
     )
 
@@ -69,22 +68,13 @@ def user_detail(request, pk: int):
 def profile(request):
     template = 'users/profile.html'
 
-    if not Profile.objects.filter(user=request.user.id).exists():
-        item = Profile.objects.create(user=request.user)
-        item.save()
-
     form = CustomUserChangeForm(request.POST or None, instance=request.user)
-    profile_form = UpdateProfileForm(request.POST or None,
-                                     instance=request.user.profile)
     context = {
         'form': form,
-        'profile_form': profile_form,
     }
 
-    if (request.method == 'POST' and form.is_valid()
-            and profile_form.is_valid()):
+    if request.method == 'POST' and form.is_valid():
         form.save()
-        profile_form.save()
         messages.success(request, 'Изменения сохранены')
         return redirect(reverse('users:profile'))
 

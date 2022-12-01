@@ -1,4 +1,3 @@
-from django import forms
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib.auth.forms import PasswordResetForm, SetPasswordForm
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
@@ -6,7 +5,10 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
 from core.forms import BaseForm
-from users.models import Profile
+from django.contrib.auth import get_user_model
+
+
+User = get_user_model()
 
 
 class LoginForm(BaseForm, AuthenticationForm):
@@ -48,18 +50,9 @@ class CustomUserChangeForm(BaseForm, UserChangeForm):
     class Meta:
         model = User
         fields = (
+            User.username.field.name,
             User.email.field.name,
             User.first_name.field.name,
             User.last_name.field.name,
+            User.birthday.field.name,
         )
-
-
-class UpdateProfileForm(BaseForm, forms.ModelForm):
-    class Meta:
-        model = Profile
-        fields = (
-            Profile.birthday.field.name,
-        )
-        help_texts = {
-            Profile.birthday.field.name: 'Формат: гггг-мм-дд'
-        }
