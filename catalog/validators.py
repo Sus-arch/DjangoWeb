@@ -17,7 +17,7 @@ def validate_amazing(value):
 
 
 def validate_weight(value):
-    if type(value) != int:
+    if type(value) is not int:
         raise ValidationError('Тип данных не int')
     if value <= 0 or value >= 32767:
         raise ValidationError('Вес не находиться в диапазоне (0;32767)')
