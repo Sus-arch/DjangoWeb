@@ -1,14 +1,14 @@
 # Запуск проекта
-* Клонируем [репозиторий](https://github.com/Sus-arch/DjangoYandex)
+* Клонируем [репозиторий](https://github.com/Sus-arch/DjangoWeb)
 
   ```
-  git clone https://github.com/Sus-arch/DjangoYandex.git
+  git clone https://github.com/Sus-arch/DjangoWeb.git
   ```
   
 * Переходим в репозиторий 
  
   ```
-  cd DjangoYandex 
+  cd DjangoWeb
   ```
   
 * Активируем виртуальное окружение
